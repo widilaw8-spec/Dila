@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Toko Flower Wdila</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-pink-50 min-h-screen">
+  <header class="bg-pink-600 text-white p-4 shadow-md flex justify-between items-center">
+    <div>
+      <h1 class="text-xl font-bold">🌸 Flower Wdila</h1>
+      <p class="text-sm italic">"Keindahan bunga, untuk setiap momen berharga Anda"</p>
+    </div>
+    
+    <button class="relative mr-4">
+      <span class="bg-yellow-400 p-2 rounded-full text-black font-bold">🛒</span>
+    </button>
+
+    <button onclick="logout()" class="bg-white text-pink-600 px-4 py-1 rounded-lg hover:bg-gray-100">Logout</button>
+  </header>
+
+
+
+  <!-- PRODUK -->
+  <main class="p-6">
+    <h2 class="text-2xl font-semibold text-pink-700 mb-4">Produk Bunga</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- PRODUK 1 -->
+      <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+        <img src="c:\Users\User\Downloads\Mawar.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+        <h3 class="text-lg font-bold text-gray-700">Bunga Mawar</h3>
+        <p class="text-pink-600 font-semibold">Rp50.000</p>
+
+        <select id="pay-Mawar" class="w-full border mt-2 p-2 rounded">
+          <option>Transfer Bank</option>
+          <option>COD</option>
+          <option>QRIS</option>
+        </select>
+
+        <button onclick="buyFlower('Bunga Mawar','pay-Mawar')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+        <button onclick="toggleReview('Mawar')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+        <div id="review-form-Mawar" class="hidden mt-2">
+          <textarea id="review-input-Mawar" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+          <button onclick="submitReview('Mawar')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+        </div>
+
+        <div id="review-list-Mawar" class="mt-2 text-sm text-gray-700"></div>
+      </div>
+
+
+      <!-- PRODUK 2 -->
+      <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+        <img src="c:\Users\User\Downloads\Tulip.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+        <h3 class="text-lg font-bold text-gray-700">Bunga Tulip</h3>
+        <p class="text-pink-600 font-semibold">Rp65.000</p>
+
+        <select id="pay-Tulip" class="w-full border mt-2 p-2 rounded">
+          <option>Transfer Bank</option>
+          <option>COD</option>
+          <option>QRIS</option>
+        </select>
+
+        <button onclick="buyFlower('Bunga Tulip','pay-Tulip')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+        <button onclick="toggleReview('Tulip')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+        <div id="review-form-Tulip" class="hidden mt-2">
+          <textarea id="review-input-Tulip" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+          <button onclick="submitReview('Tulip')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+        </div>
+
+        <div id="review-list-Tulip" class="mt-2 text-sm text-gray-700"></div>
+      </div>
+
+
+      <!-- PRODUK 3 -->
+      <div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+        <img src="c:\Users\User\Downloads\Matahari.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+        <h3 class="text-lg font-bold text-gray-700">Bunga Matahari</h3>
+        <p class="text-pink-600 font-semibold">Rp120.000</p>
+
+        <select id="pay-Matahari" class="w-full border mt-2 p-2 rounded">
+          <option>Transfer Bank</option>
+          <option>COD</option>
+          <option>QRIS</option>
+        </select>
+
+        <button onclick="buyFlower('Bunga Matahari','pay-Matahari')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+        <button onclick="toggleReview('Matahari')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+        <div id="review-form-Matahari" class="hidden mt-2">
+          <textarea id="review-input-Matahari" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+          <button onclick="submitReview('Matahari')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+        </div>
+
+        <div id="review-list-Matahari" class="mt-2 text-sm text-gray-700"></div>
+      </div>
+
+      <!-- PRODUK 4 - Bunga Peony -->
+<div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+  <img src="c:\Users\User\Downloads\Peony.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+  <h3 class="text-lg font-bold text-gray-700">Bunga Peony</h3>
+  <p class="text-pink-600 font-semibold">Rp150.000</p>
+
+  <select id="pay-Peony" class="w-full border mt-2 p-2 rounded">
+    <option>Transfer Bank</option>
+    <option>COD</option>
+    <option>QRIS</option>
+  </select>
+
+  <button onclick="buyFlower('Bunga Peony','pay-Peony')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+  <button onclick="toggleReview('Peony')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+  <div id="review-form-Peony" class="hidden mt-2">
+    <textarea id="review-input-Peony" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+    <button onclick="submitReview('Peony')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+  </div>
+
+  <div id="review-list-Peony" class="mt-2 text-sm text-gray-700"></div>
+</div>
+
+
+<!-- PRODUK 5 - Bunga Aster -->
+<div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+  <img src="c:\Users\User\Downloads\Aster.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+  <h3 class="text-lg font-bold text-gray-700">Bunga Aster</h3>
+  <p class="text-pink-600 font-semibold">Rp40.000</p>
+
+  <select id="pay-Aster" class="w-full border mt-2 p-2 rounded">
+    <option>Transfer Bank</option>
+    <option>COD</option>
+    <option>QRIS</option>
+  </select>
+
+  <button onclick="buyFlower('Bunga Aster','pay-Aster')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+  <button onclick="toggleReview('Aster')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+  <div id="review-form-Aster" class="hidden mt-2">
+    <textarea id="review-input-Aster" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+    <button onclick="submitReview('Aster')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+  </div>
+
+  <div id="review-list-Aster" class="mt-2 text-sm text-gray-700"></div>
+</div>
+
+
+<!-- PRODUK 6 - Bunga Lily -->
+<div class="bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+  <img src="c:\Users\User\Downloads\Lily.jpeg" class="rounded-lg mb-3 w-full object-cover h-60">
+  <h3 class="text-lg font-bold text-gray-700">Bunga Lily</h3>
+  <p class="text-pink-600 font-semibold">Rp75.000</p>
+
+  <select id="pay-Lily" class="w-full border mt-2 p-2 rounded">
+    <option>Transfer Bank</option>
+    <option>COD</option>
+    <option>QRIS</option>
+  </select>
+
+  <button onclick="buyFlower('Bunga Lily','pay-Lily')" class="mt-2 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600">Beli</button>
+  <button onclick="toggleReview('Lily')" class="mt-2 w-full bg-white text-pink-600 border border-pink-500 py-2 rounded-lg hover:bg-pink-50">Tulis Ulasan</button>
+
+  <div id="review-form-Lily" class="hidden mt-2">
+    <textarea id="review-input-Lily" class="w-full border rounded p-2 mb-2" placeholder="Tulis ulasan Anda..."></textarea>
+    <button onclick="submitReview('Lily')" class="bg-pink-600 text-white px-4 py-1 rounded hover:bg-pink-700">Kirim</button>
+  </div>
+
+  <div id="review-list-Lily" class="mt-2 text-sm text-gray-700"></div>
+</div>
+
+    </div>
+  </main>
+
+  <footer class="bg-pink-200 text-center py-4 text-pink-700 mt-8 rounded-t-xl shadow-inner">
+    Kontak kami: FlowerWdila@gmail.com <br>
+    Alamat: Jl. Raya Suradita <br>
+    Nomor HP: 0857-6783-4571 <br>
+    © 2025 Flower Wdila 🌸
+  </footer>
+
+
+  <script>
+    function buyFlower(nama, payID) {
+      let metode = document.getElementById(payID).value;
+      alert(
+        "Pembelian Berhasil!\n" +
+        "Produk : " + nama + "\n" +
+        "Pembayaran : " + metode + "\n\n" +
+        "Terima kasih sudah berbelanja 💗"
+      );
+    }
+
+    function toggleReview(id) {
+      let form = document.getElementById("review-form-" + id);
+      form.classList.toggle("hidden");
+    }
+
+    function submitReview(id) {
+      let input = document.getElementById("review-input-" + id);
+      let list = document.getElementById("review-list-" + id);
+
+      if (input.value.trim() === "") {
+        alert("Ulasan tidak boleh kosong!");
+        return;
+      }
+
+      let item = document.createElement("p");
+      item.classList.add("bg-pink-100", "p-2", "rounded", "mt-1");
+      item.innerText = "📝 " + input.value;
+
+      list.appendChild(item);
+      input.value = "";
+
+      alert("Ulasan berhasil dikirim 💗");
+    }
+
+    function logout() {
+      window.location.href = "index.html";
+    }
+
+  </script>
+  <script>
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    const products = ["Mawar", "Tulip", "Matahari", "Peony", "Aster", "Lily"];
+    products.forEach(p => loadReviews(p));
+  });
+
+  function submitReview(id) {
+    let input = document.getElementById("review-input-" + id);
+    let list = document.getElementById("review-list-" + id);
+
+    if (input.value.trim() === "") {
+      alert("Ulasan tidak boleh kosong!");
+      return;
+    }
+
+    let reviewText = input.value.trim();
+
+    let stored = JSON.parse(localStorage.getItem("reviews-" + id)) || [];
+
+    stored.push(reviewText);
+
+    localStorage.setItem("reviews-" + id, JSON.stringify(stored));
+
+    addReviewToList(id, reviewText);
+
+    input.value = "";
+    alert("Ulasan berhasil dikirim 💗");
+  }
+
+  function addReviewToList(id, text) {
+    let list = document.getElementById("review-list-" + id);
+    let item = document.createElement("p");
+    item.classList.add("bg-pink-100", "p-2", "rounded", "mt-1");
+    item.innerText = "📝 " + text;
+    list.appendChild(item);
+  }
+
+  function loadReviews(id) {
+    let list = document.getElementById("review-list-" + id);
+    let stored = JSON.parse(localStorage.getItem("reviews-" + id)) || [];
+
+    list.innerHTML = ""; 
+
+    stored.forEach(review => {
+      addReviewToList(id, review);
+    });
+  }
+
+  function toggleReview(id) {
+    let form = document.getElementById("review-form-" + id);
+    form.classList.toggle("hidden");
+  }
+
+  function buyFlower(nama, payID) {
+    let metode = document.getElementById(payID).value;
+    alert(
+      "Pembelian Berhasil!\n" +
+      "Produk : " + nama + "\n" +
+      "Pembayaran : " + metode + "\n\n" +
+      "Terima kasih sudah berbelanja 💗"
+    );
+  }
+
+  function logout() {
+    window.location.href = "index.html";
+  }
+</script>
+
+
+</body>
+</html>

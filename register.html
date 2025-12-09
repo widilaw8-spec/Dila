@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registrasi - Toko W & S</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-pink-100 flex items-center justify-center min-h-screen">
+  <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-2xl overflow-hidden max-w-4xl">
+    
+    <!-- Gambar Bunga -->
+    <div class="md:w-1/2">
+      <img src="c:\Users\User\OneDrive\Desktop\LOGIN\Image\jpg.15.jpeg" alt="Flower" class="object-cover w-full h-full"
+           onerror="this.onerror=null; this.src='https://source.unsplash.com/400x400/?flowers,bouquet'" />
+    </div>
+
+    <!-- Form Daftar -->
+    <div class="w-full md:w-1/2 p-8">
+      <h2 class="text-3xl font-bold text-pink-700 mb-6 text-center">Daftar Akun</h2>
+      <form onsubmit="return registerUser(event)">
+        <input type="text" id="register-name" placeholder="Nama Lengkap" class="w-full mb-4 p-3 border border-gray-300 rounded-lg" required />
+        <input type="email" id="register-email" placeholder="Email" class="w-full mb-4 p-3 border border-gray-300 rounded-lg" required />
+        <input type="password" id="register-password" placeholder="Password" class="w-full mb-4 p-3 border border-gray-300 rounded-lg" required />
+        <button type="submit" class="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700">Daftar</button>
+      </form>
+      <p class="mt-4 text-center text-sm">Sudah punya akun? <a href="index.html" class="text-pink-600 hover:underline">Login</a></p>
+    </div>
+
+  </div>
+</body>
+</html>
